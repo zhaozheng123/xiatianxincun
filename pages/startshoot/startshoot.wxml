@@ -1,0 +1,19 @@
+<view class='page'>
+  <video style="width:100%;height:100%" src="https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/1573769397hw/1573769397hw_1601533754770_w.mp4" loop autoplay muted control="{{false}}" objectFit="cover"></video>
+
+  <cover-view class="info_area">
+    <cover-image wx:if="{{state=='busy'}}" src="../../images/busy.jpg"></cover-image>
+    <cover-image wx:if="{{state=='wait'}}" src="../../images/waiting.jpg"></cover-image>
+    <cover-image wx:if="{{state=='start'}}" src="../../images/start.jpg"></cover-image>
+  </cover-view>
+  <!-- <cover-view style="position:absolute;width:100%;text-align:center;top:50%">{{state}}</cover-view> -->
+ <cover-view class="placearea">
+   当前拍摄点：{{activity_name}}
+ </cover-view>
+  <cover-view class="btn_area" bindtap="startshoot">
+    <cover-image src="../../images/btn_bg.png"></cover-image>
+    <cover-view>一键拍同款</cover-view>
+  </cover-view>
+
+</view>
+

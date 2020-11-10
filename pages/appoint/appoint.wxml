@@ -1,0 +1,58 @@
+
+<!--pages/main_page/main_page.wxml-->
+<view class='page' >
+  <image class="mainBg" src="../../images/bg_ball.jpg" mode="scaleToFill"></image>
+  <view class="row_item">
+    <view class="row_item_title">球场</view>
+    <view class="row_item_detail" style="color: #30beff;">{{showChoosePlace}}</view>
+  </view>
+  <view class="location_area">
+    <view class="row_item_title1">选择位置</view>
+    <view class="location_choose_area">
+      <view class="location_choose_item" wx:for="{{LocationList}}" wx:key="unique" bindtap='choose_location' data-item="{{item}}" style="border:{{item.location_name==choose_location_name?'2px solid #30beff':''}}">{{item.location_name}}</view>
+    </view>
+  </view> 
+    <view class="row_item"  data-gid='0' bindtap="open_choose_time">
+    <view class="row_item_title">开始时间</view>
+    <view class="row_item_detail" style="color: #30beff;">{{showChooseStartTime}}</view>
+  </view>
+    <view class="row_item" data-gid='1' bindtap="open_choose_time">
+    <view class="row_item_title">结束时间</view>
+    <view class="row_item_detail" style="color: #30beff;">{{showChooseEndTime}}</view>
+  </view>
+
+ <view class="btn_group" bindtap="reserve">
+    <image src="../../images/btn_bg.png" mode="aspectFit"></image>
+    <view class="txt">预约</view>
+  </view>
+
+
+
+
+  <block wx:if="{{choose_time}}">
+    <view class="sheet_background"></view>
+    <view class="time_picker_area">
+      <picker-view class="time_picker" value="{{value}}" bindchange="bindChange" indicator-class="sheet_choosed_time_item">
+        <picker-view-column>
+          <view wx:for="{{years}}"  wx:key="unique" style="line-height: 50px; text-align: center;">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" wx:key="unique" style="line-height: 50px; text-align: center;">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" wx:key="unique" style="line-height: 50px; text-align: center;">{{item}}日</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{hours}}" wx:key="unique" style="line-height: 50px; text-align: center;">{{item}}时</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{minutes}}" wx:key="unique" style="line-height: 50px; text-align: center;">{{item}}分</view>
+        </picker-view-column>
+      </picker-view>
+      <view class="sheet_btn_area">
+          <view class="sheet_btn_cancel" bindtap="choose_time_cancel">取消</view>
+          <view class="sheet_btn_sure" bindtap="choose_time_ok">确定</view>
+      </view>
+    </view>
+  </block>
+</view>

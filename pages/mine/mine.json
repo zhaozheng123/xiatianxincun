@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "backgroundColor": "#ffffff",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "我的影像",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true
+}

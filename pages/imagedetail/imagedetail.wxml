@@ -1,0 +1,10 @@
+<view class='page'>
+  <view class="image_area">
+    <!-- <image wx:if="{{mode=='photo'}}" src="{{imgSrc}}" style="width:100%" mode='aspectFit'></image> -->
+    <video wx:if="{{mode=='video'}}" src='{{videoSrc}}' poster="{{poster}}"  custom-cache="{{false}}" style="width:{{windowWidth}}rpx;height:{{windowHeight-120}}rpx" autoplay object-fit='contain' loop></video>
+  </view>
+  <view class="btn_area">
+     <view class="btn_group_item btn_buy" bindtap="pay">立即购买</view>
+  </view>
+</view>
+

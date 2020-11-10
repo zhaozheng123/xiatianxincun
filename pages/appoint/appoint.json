@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "backgroundColor": "#000000",
+  "navigationBarBackgroundColor": "#f7f7f7",
+  "navigationBarTitleText": "预约",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false
+}

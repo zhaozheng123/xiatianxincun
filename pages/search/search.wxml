@@ -1,0 +1,40 @@
+<view class='page'>
+  <view class="row_area">
+    <view class="row_item_time" bindtap="open_choose_time">
+      <image class="row_item_img" src="../../images/time1.png"></image>
+      <view class="row_item_title">打球时间</view>
+      <view class="row_item_detail_2" style="{{curChooseTime == ''  ?'color: #d8d8d8;':''}}">{{showChooseTime}}</view>
+    </view>        
+  </view>
+ <view class="tasklist" style="height:{{tasklistHeight}}rpx">
+    <block wx:if="{{tasklist.length!=0}}"  wx:key="index" wx:for="{{tasklist}}">  
+      <view class="img">      
+          <image class="ditu" src="https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/{{item.task.taskId}}_min.jpg" data-current="{{index}}" data-item="{{item}}" mode='aspectFill' bindtap='gomyVideo' ></image>           
+      </view> 
+    </block> 
+  </view>
+  <view class='findvideofail' wx:if="{{findvideofail}}">
+       <image mode="aspectFit" src="https://siiva-video.oss-cn-hangzhou.aliyuncs.com/yolong/findfacefail.png"></image>
+       <view class="txt">什么也没搜到，试试换游玩时间搜索</view>
+  </view>
+  
+  <block wx:if="{{choose_time}}">
+    <view class="sheet_background"></view>
+    <view class="sheet_area"> 
+      <view class="sheet_title">选择打球时间段</view>
+      <view class="sheet_choose_area">
+      <!-- indicator-class="sheet_choosed_item" mask-class="sheet_other_item" curIndex-->
+        <picker-view class="sheet_picker"  value="{{curIndex}}" indicator-class="sheet_choosed_item"  bindchange="chenge_item">
+          <picker-view-column>
+              <view wx:for="{{picker_hours}}" wx:key="unique" class="picker-item">{{item}}</view>
+          </picker-view-column>  
+        </picker-view>  
+      </view>
+      <view class="sheet_btn_area">
+        <view class="sheet_btn_cancel" bindtap="choose_cancel">取消</view>
+        <view class="sheet_btn_sure" bindtap="choose_ok">确定</view>
+      </view>
+    </view>
+  </block> 
+
+</view>

@@ -1,0 +1,16 @@
+<view class="myMedia">
+  <video wx:if="{{mode=='playback'}}" id="myVideo" src='{{videoSrc}}' custom-cache="{{false}}" style="width:100%" object-fit='cover' 
+  bindended="bindended" 
+  bindloadedmetadata="bindloadedmetadata" 
+  binderror="binderror"
+  bindwaiting="bindwaiting">
+  </video>
+
+  <view class="live_area" wx:if="{{mode=='broadcast'}}">
+    <view style="font-size:1.1rem">直播地址：</view>
+    <view class="live_txt_area">
+      <view class="txt">{{live_url}}</view>
+      <button bindtap='copyText' data-text="{{live_url}}">复制</button>
+    </view>
+  </view>
+</view>

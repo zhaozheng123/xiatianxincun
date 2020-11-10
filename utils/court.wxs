@@ -1,0 +1,24 @@
+var filter = {
+  getlivetype: function (value) {
+    var live_type_name=''
+    switch(value){
+      case 'left':
+        live_type_name= '左半场'
+        break;
+      case 'right':
+        live_type_name= '右半场'
+        break;
+      case 'all':
+        live_type_name= '全场'
+        break;
+      case 'follow':
+        live_type_name= '跟随'
+        break;
+    }
+    return live_type_name
+  },
+}
+// 导出对外暴露的属性
+module.exports = {
+  getlivetype: filter.getlivetype,
+}

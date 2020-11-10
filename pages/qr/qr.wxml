@@ -1,0 +1,7 @@
+<view>
+    <view class="step"> 
+      <image mode="widthFix" src="../../images/step.png"></image>
+    </view>
+    <canvas class="canvas-code"canvas-id="myQrcode" />
+    <view class="uid">ID：{{uid}}</view>
+</view>

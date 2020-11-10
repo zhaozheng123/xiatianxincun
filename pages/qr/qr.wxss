@@ -1,0 +1,47 @@
+/* pages/hb/hb.wxss */
+.canvas-code{
+  background:#fff;
+  width: 140px;
+  height:140px;
+  margin: 485rpx auto 20rpx;
+}
+.step{
+  position: fixed;
+  top:75rpx;
+  left:15rpx;
+  width: 97%;
+}
+.step image{
+  width: 100%;
+}
+
+.uid{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color:#333333;
+}
+
+.get{
+  position: relative;
+  margin-top: 30rpx;
+  width: 60%;
+  height: 150rpx;
+  left: 20%;
+}
+.get image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.get .txt{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 150rpx;
+  color:#FFFFFF;
+  top: 0;
+  letter-spacing: 4rpx;
+  font-size:1.2rem;
+}

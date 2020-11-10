@@ -1,0 +1,54 @@
+/**seeting.wxss**/
+body{
+  margin:0;
+  padding:0;
+}
+video{
+  position: absolute;
+}
+
+.btn_area{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  background:black;
+}
+.mark{
+  position: relative;
+  width:424rpx;
+  height: 80rpx;
+}
+
+.mark cover-image{
+  position: relative;
+  width:100%;
+  height: 100%;
+}
+.mark cover-view{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  line-height: 80rpx;
+  font-size: 1.1rem;
+  letter-spacing: 4rpx;
+}
+
+.backImg{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 20rpx;
+  z-index: 15;
+}
+
+
+
+

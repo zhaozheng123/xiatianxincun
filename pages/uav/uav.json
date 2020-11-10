@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "backgroundColor": "#000000",
+  "navigationBarBackgroundColor": "#f7f7f7",
+  "navigationBarTitleText": "智能航拍",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false
+}

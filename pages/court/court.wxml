@@ -1,0 +1,32 @@
+<wxs module="filter" src="../../utils/court.wxs"></wxs>
+<view class='page' >
+  <view class="title">
+    <view class="title_name">{{activity_name}}</view>
+    <view class="btn_group" bindtap="click_reserve">
+        <image src="../../images/btn_bg1.png" mode="aspectFit"></image>
+        <view class="txt">点我预约</view>
+    </view>
+  </view>
+  <view class="reserveList">
+      <block wx:if="{{reserveList}}"  wx:for="{{reserveList}}" wx:key="index"> 
+          <view class="reservelist_item">
+            <view class="col1">
+                <image src="../../images/item_bg.jpg" mode='aspectFill'></image>
+            </view>
+            <view class="col2">
+              <view class="row1">{{item.activity_name}}--{{filter.getlivetype(item.task.live_type)}}</view>
+              <view class="row2">{{item.task.live_start}}</view>
+              <view class="row3">
+                <view wx:if="{{item.task.nobegin}}">球赛未开始，请耐心等待...</view>
+                <button wx:if="{{!item.task.nobegin && item.task.isbroadcast}}" type="warn" size="mini" data-item="{{item}}" bindtap="goShowBroadCast">直播中</button>
+                <button wx:if="{{!item.task.nobegin && !item.task.isbroadcast}}" type="primary" size="mini"  data-item="{{item}}" bindtap="goSeeVideo">回放</button>
+              </view>
+            </view>
+             <!-- <view class="col3">
+              <image src="../../images/guide.png" mode="aspectFit"></image>
+            </view> -->
+          </view>
+      </block>
+  </view>
+
+</view>

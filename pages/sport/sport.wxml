@@ -1,0 +1,24 @@
+<view class='page' >
+  <image class="mainBg" src="../../images/bg_ball.jpg" mode="scaleToFill"></image>
+  <view class="toseemoment" bindtap="Toseemoment">
+    <view class="ExempleImg">
+      <image class="item_img" src="../../images/moment.png" mode="aspectFit"></image>
+    </view>
+    <text>精彩回顾</text>
+  </view> 
+
+  <view class="toseemine" bindtap="Toseelive">
+    <view class="ExempleImg">
+      <image class="item_img" src="../../images/live.png" mode="aspectFit"></image>
+    </view>
+    <text>直播观看</text>
+  </view> 
+
+   <view class="toseemine" bindtap="Toseemine">
+    <view class="ExempleImg">
+      <image class="item_img" src="../../images/mine.png" mode="aspectFit"></image>
+    </view>
+    <text>查看我的</text>
+  </view> 
+
+</view>

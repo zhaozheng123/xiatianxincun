@@ -1,0 +1,58 @@
+/**seeting.wxss**/
+body{
+  margin:0;
+  padding:0;
+}
+.myMedia{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0);
+}
+video{
+  position: absolute;
+}
+.icon-play{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+}
+
+
+
+
+/*底部icon布局*/
+.btn_area{
+  position: absolute;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  height: 120rpx;
+  display:flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background: rgba(0,0,0,.3)
+}
+
+
+.share-btn{
+  position: absolute;
+  background: none;
+  margin-top: -70rpx;
+  padding: 50rpx 0 0 0;
+  /* border:1px solid red; */
+  width: 70rpx;
+  margin-left: 30rpx;
+}
+.mark cover-image{
+  width: 70rpx;
+  height: 70rpx;
+  padding: 15rpx 30rpx;
+}
+
+

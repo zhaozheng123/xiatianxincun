@@ -1,0 +1,13 @@
+<view class="myMedia">
+  <video src='{{videoSrc}}' custom-cache="{{false}}" style="width:{{windowWidth}}rpx;height:{{windowHeight-120}}rpx" autoplay object-fit='contain' loop></video>
+  <cover-view class='btn_area'>
+    <cover-view class='mark' bindtap='download_click'>
+      <cover-image style="padding-right:60rpx" src="../../images/download.png" mode='aspectFit'></cover-image>
+    </cover-view> 
+    <cover-view class='mark'>
+    <cover-image src="../../images/share.png"  mode='aspectFit'></cover-image>
+      <button class='share-btn' data-name="shareBtn" open-type="share">
+      </button>
+    </cover-view>   
+  </cover-view>
+</view>
