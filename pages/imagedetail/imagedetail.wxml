@@ -4,7 +4,7 @@
     <video wx:if="{{mode=='video'}}" src='{{videoSrc}}' poster="{{poster}}"  custom-cache="{{false}}" style="width:{{windowWidth}}rpx;height:{{windowHeight-120}}rpx" autoplay object-fit='contain' loop></video>
   </view>
   <view class="btn_area">
-     <view class="btn_group_item btn_buy" bindtap="pay">免费取得</view>
+     <view class="btn_group_item btn_buy" bindtap="free">免费取得</view>
   </view>
 </view>
 

@@ -10,3 +10,6 @@
     }
   },
   # 6.images文件和lib文件也需要拷贝
+
+
+  # 之后无人机视频上线支付方式，小程序部分只需要将imagedetail.js里正式支付调用方法pay()相关注释打开,free()方法注释掉;imagedetail.html里对应bindtap修改为pay即可

@@ -41,7 +41,7 @@ Page({
   },
 
   /* 目前免费支付调用该方法*/
-  pay:function(){
+  free:function(){
     var Bind_Url = "https://iva.siiva.com/me_photo/task/bind_openid";
     var data = {
       openid: app.globalData.openId,
