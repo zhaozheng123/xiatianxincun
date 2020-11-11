@@ -73,20 +73,21 @@ Page({
       var Bind_Url = "https://iva.siiva.com/me_photo/task/bind_openid";
       var data = {
         openid: app.globalData.openId,
-        taskId: this.data.taskId
+        taskId: this.data.taskId,
+        is_pay:'1'    //篮球活动，免费取得 直接绑定已购买
       }
       // 绑定
       util.request_get(Bind_Url, data, this.getBindBack);
   },
   getBindBack:function(res){
-    console.log(res)
+    // console.log(res)
     if(res.data && res.data.code == 0){
-      console.log('绑定成功')
-      wx.switchTab({
+      // console.log('绑定成功')
+      app.globalData.is_pay=1
+      wx.navigateTo({
         url: '../mine/mine',
       })
     }
-
   }
 
 })
