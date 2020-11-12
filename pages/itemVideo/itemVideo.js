@@ -63,7 +63,7 @@ Page({
 
   backheadpage:function(){
     wx.navigateTo({
-      url: '../search/search',
+      url: '../sport/sport',
     }) 
   },
 

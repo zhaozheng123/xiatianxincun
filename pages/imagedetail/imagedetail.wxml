@@ -7,4 +7,3 @@
      <view class="btn_group_item btn_buy" bindtap="free">免费取得</view>
   </view>
 </view>
-

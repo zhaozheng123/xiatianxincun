@@ -29,7 +29,7 @@
                 <block wx:else >
                   <view class="box">
                     <view class='img_background' wx:for="{{item.tasks}}" wx:key="unique">
-                          <image mode="aspectFill"  src="{{item.state == 'complete'?'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+item.activity_id+'/'+item.taskId+'_min.jpg':'../../images/logo.jpg'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
+                          <image mode="aspectFill"  src="{{item.state == 'complete'?'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+item.activity_id+'/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
                           <image wx:if="{{item.mode == 'video'}}" class="img_video" src="../../images/video.png"></image>
                           <image wx:if="{{item.state !== 'complete' && item.state!=='abort'}}" style="position:absolute;width:100%;height:100%" src="../../images/onDo.png" mode="aspectFill"></image>
                           <view class="abort" wx:if="{{item.state=='abort'}}" >

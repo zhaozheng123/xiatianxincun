@@ -24,6 +24,18 @@ Page({
               success: function (res) {
                 console.log('openid：'+res.data.openid)
                 app.globalData.openId =  res.data.openid;
+
+                if (options.scene == undefined) {
+                  console.log('扫的小程序公共码进来的')
+                } else {
+                  console.log('扫描的单独绑定taskId的二维码进来的')
+                  var taskId = options.scene;
+                  var activity_id = taskId.split('_')[0];
+                  wx.navigateTo({
+                    url: '../itemVideo/itemVideo?state=single&activity_id=' + activity_id+'&taskId='+taskId,
+                  })            
+                }
+                
               }
             })
           }

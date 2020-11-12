@@ -103,7 +103,7 @@ Page({
             state:"start"
           })
           setTimeout(()=>{
-            wx.switchTab({
+            wx.navigateTo({
               url: '../mine/mine',
             })
           },5000)
