@@ -167,6 +167,11 @@ Page({
           url: '../court/court',
         })
       },2000)
+    }else{
+      wx.showToast({
+        icon:'none',
+        title: '预约失败',
+      })
     }
   }
 

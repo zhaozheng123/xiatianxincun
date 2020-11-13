@@ -29,7 +29,7 @@ Page({
       this.setData({
         mode:options.mode,
         taskId:options.taskId,
-        live_url:options.live_url
+        live_url:'https://ui.siiva.com/siiva_live/?taskId='+options.taskId
       })
       if(this.data.mode=='playback'){
         var data={

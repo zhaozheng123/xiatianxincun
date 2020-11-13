@@ -94,12 +94,12 @@ Page({
   },
   goShowBroadCast:function(res){
     var temp_cur_item = res.currentTarget.dataset.item;
-    console.log("列表点击事件", temp_cur_item);
+    // console.log("列表点击事件", temp_cur_item);
     wx.navigateTo({
-      url: '../live/live?live_url='+temp_cur_item.task.live_url+'&mode=broadcast'
+      url: '../live/live?taskId='+temp_cur_item.task.taskId+'&mode=broadcast'
     })
 
-    ////测试直接播放
+    //测试直接播放
     // wx.navigateTo({
     //   url: '../out/out?taskId='+temp_cur_item.task.taskId
     // })
