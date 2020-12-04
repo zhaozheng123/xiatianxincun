@@ -1,19 +1,34 @@
 <view class='page'>
-  <video style="width:100%;height:100%" src="https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/1573769397hw/1573769397hw_1601533754770_w.mp4" loop autoplay muted control="{{false}}" objectFit="cover"></video>
+  <view class="up_area">
+    <view class="myposition">
+      <image style="position:absolute;width:100%;height:100%" src="../../images/tipbg.png"></image>
+        <view class="icon">
+          <image src="../../images/position.png"></image>
+          <view class="text">{{activity_name}}</view>
+        </view>
+    </view>
+    <view class="video_area">
+      <video style="width:100%;height:100%" src="{{example_src}}" loop autoplay control="{{false}}" objectFit="cover"></video>
+    </view>
+    <view class="title">
+      <image src="../../images/media.png"></image>
+      <view class="text">无人机教学视频<text style="color:#30BDFF">拍前必看</text></view>
+    </view>
+  </view>
+  <view class="state_area">
+    <image src="../../images/{{current_state}}.png"></image>
+  </view>
 
-  <cover-view class="info_area">
-    <cover-image wx:if="{{state=='busy'}}" src="../../images/busy.jpg"></cover-image>
-    <cover-image wx:if="{{state=='wait'}}" src="../../images/waiting.jpg"></cover-image>
-    <cover-image wx:if="{{state=='start'}}" src="../../images/start.jpg"></cover-image>
-  </cover-view>
-  <!-- <cover-view style="position:absolute;width:100%;text-align:center;top:50%">{{state}}</cover-view> -->
- <cover-view class="placearea">
-   当前拍摄点：{{activity_name}}
- </cover-view>
-  <cover-view class="btn_area" bindtap="startshoot">
-    <cover-image src="../../images/btn_bg.png"></cover-image>
-    <cover-view>一键拍同款</cover-view>
-  </cover-view>
+  <view class="btn_area">
+    <view class="btn_area1" wx:if="{{!isclicked}}" bindtap="startshoot">
+      <image src="../../images/btn1.png"></image>
+      <view>召唤无人机</view>
+    </view>
+    <view class="btn_area2" wx:if="{{isclicked}}">
+      <image src="../../images/btn3.png"></image>
+      <view>召唤无人机</view>
+    </view>
+  </view>
 
 </view>
 

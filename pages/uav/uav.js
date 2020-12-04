@@ -20,7 +20,7 @@ Page({
           console.log('res.code:'+res.code)
           if (res.code) {
             wx.request({
-              url: "https://iva.siiva.com/me_photo/user/openid?code=" + res.code + "&appid=" + app.globalData.appid,
+              url: "https://ft.wisewing.cn/me_photo/user/openid?code=" + res.code + "&appid=" + app.globalData.appid,
               data: {
                 code: res.code,
               },
@@ -146,7 +146,7 @@ Page({
   },
 
   getActivityByGPS:function(){
-    var url = "https://iva.siiva.com/me_photo/activity/info";
+    var url = "https://ft.wisewing.cn/me_photo/activity/info";
     var data = {
       lat: this.data.latitude,
       lon: this.data.longitude
@@ -157,7 +157,7 @@ Page({
   getActivityByGPSBack:function(res){
     // console.log(res)
     if(res.data.code==0){
-      console.log("已经为你匹配到对应活动")
+      // console.log("已经为你匹配到对应活动")
       wx.navigateTo({
         url: '../startshoot/startshoot?activity_id='+res.data.activity_id+'&project_id='+res.data.project_id+'&activity_name='+res.data.activity_name,
       })
@@ -166,9 +166,20 @@ Page({
       wx.showToast({
         icon:'none',
         title: '当前无拍摄点',
+        duration:4000
       })
     }
-  }
+  },
+  // ToTEST:function(){
+  //   wx.navigateTo({
+  //     url: '../startshoot/startshoot?activity_id=1606529289gf&project_id=pr_1623398777&activity_name=下田心村白亭拍摄点',
+  //   })
+  // },
+  // ToTEST1:function(){
+  //   wx.navigateTo({
+  //     url: '../startshoot/startshoot?activity_id=1606533694zf&project_id=pr_1623398777&activity_name=下田心村水塔拍摄点',
+  //   })
+  // }
 
 
 

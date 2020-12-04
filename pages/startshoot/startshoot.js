@@ -8,14 +8,17 @@ var socketUrl = 'wss://iva.siiva.com'
 var socketMessage = ''
 // 上下文对象
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    state:'',  //预约状态
+    current_state:'study',  //预约状态
     activity_id:'',
     activity_name:'',
     project_id:'',
+    example_src:'',//该点案例视频路径
+    isclicked:false,
   },
 
   /**
@@ -26,7 +29,8 @@ Page({
       this.setData({
         activity_id:options.activity_id,
         activity_name:options.activity_name,
-        project_id:options.project_id
+        project_id:options.project_id,
+        example_src:'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/uav/1606529289gf_study.mp4'
       })
     }
     // console.log('activity_id/activity_name/project_id:'+this.data.activity_id+'/'+this.data.activity_name+'/'+this.data.project_id)
@@ -36,11 +40,13 @@ Page({
     var that=this
     console.log('点击了“开始拍摄”按钮')
     wx.vibrateShort();
+    that.setData({
+      isclicked:true
+    })
     var ban_fly_url = "https://iva.siiva.com/me_photo/ban_fly/info";
     var ban_fly_data = {
       project_id: that.data.project_id
     }
-    // console.log(ban_fly_data)
     util.request_get(ban_fly_url, ban_fly_data, that.banflyBack);
   },
   banflyBack:function(res){
@@ -50,8 +56,14 @@ Page({
       that.socketStart()
     }else{
       that.setData({
-        state:'busy'
+        current_state:'busy'
       })
+      setTimeout(()=>{
+        that.setData({
+          isclicked:false,
+          current_state:'study'
+        })
+      },10000)
     }
   },
   startshootBack:function(res){
@@ -94,17 +106,17 @@ Page({
         case 'post_fly_responds':
           console.log('socket post_fly_responds')
           that.setData({
-            state:"wait"
+            current_state:"wait"
           })
           break;
         case 'startshoot':
           console.log('socket startshoot')
           that.setData({
-            state:"start"
+            current_state:"start"
           })
           setTimeout(()=>{
-            wx.navigateTo({
-              url: '../mine/mine',
+            wx.switchTab({
+              url: '../alreadyBuy/alreadyBuy',
             })
           },5000)
           break;

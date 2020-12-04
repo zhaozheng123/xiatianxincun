@@ -11,7 +11,7 @@ body{
   top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .mainBg{
@@ -22,16 +22,18 @@ body{
   top: 0;
 }
 .toshoot{
-  position: relative;
   width: 70%;
-  height: 14.5%;
-  background: rgba(255,255,255,.8);
+  height: 180rpx;
+  background: white;
+  position: relative;
   border-radius: 23px;
   box-shadow: 0px 3px 6px #000000;
   display: flex;
   align-items: center;
   font-size: 1rem;
   color: #333333;
+  font-weight: bolder;
+  margin-top: 150rpx;
 }
 .toshoot:active{
   transform: scale(0.95);
@@ -39,28 +41,29 @@ body{
   transition-duration: 0.2s;
 }
 .ExempleImg{
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
-  margin-left: 5%;
+  margin-left: 50rpx;
 }
 .item_img{
   width:80%;
   height: 80%;
 }
 .toseemine{
-  position: relative;
   width: 70%;
-  height: 14.5%;
-  margin-top: 50rpx;
-  background: rgba(255,255,255,.8);
+  height: 180rpx;
+  background: white;
+  position: relative;
   border-radius: 23px;
   box-shadow: 0px 3px 6px #000000;
   display: flex;
   align-items: center;
   font-size: 1rem;
   color: #333333;
+  font-weight: bolder;
+  margin-top: 30rpx;
 }
 .toseemine:active{
   transform: scale(0.95);

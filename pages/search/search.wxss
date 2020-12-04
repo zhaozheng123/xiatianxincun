@@ -235,6 +235,7 @@
 .img{
   position: relative;
   width: 49%;
+  height: 400rpx;
 }
 .ditu{
   width: 100%;

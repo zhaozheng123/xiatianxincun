@@ -6,43 +6,35 @@ body{
 }
 
 .page{ 
-  height: 100%;
   width: 100%;
+  height: auto;
   position: absolute;
   left: 0;
   top: 0;
   margin: 0;
   padding: 0;
+  background-color: #dbdbdb;
 }
-.title{
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 120rpx;
-  z-index: 1000;
-  width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #dbdbdb;
+.top_area{
+  position:fixed;
+  width:750rpx;
+  height:280rpx;
+  z-index: 1001;
 }
-.title .title_name{
+.top_area image{
   position: relative;
-  margin-left: 25rpx;
-  height: 120rpx;
-  line-height: 120rpx;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 4rpx;
-  color:#333333;
+  width: 100%;
+  height:100%;
 }
 .btn_group{
   position: absolute;
   top: 0;
+  left: 0;
   right: 25rpx;
-  width: 300rpx;
-  height: 120rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 250rpx;
+  height: 60rpx;
+  margin-top: 150rpx;
+  margin-left: 40rpx;
 }
 .btn_group image{
   position:absolute;
@@ -51,39 +43,34 @@ body{
   width: 100%;
   height: 100%;
 }
-.btn_group .txt{
-  position: relative;
-  color: #ffffff;
-  letter-spacing: 4rpx;
-  font-size: 1.1rem;
-}
 
 
 
 .reserveList{
   position:relative;
-  margin-top: 122rpx;
+  margin-top: 280rpx;
   left: 0;
   top:0;
   width:100%;
-  height: 100%;
+  height: auto;
   overflow: scroll;
 }
 .reservelist_item{
   position: relative;
   height: 250rpx;
-  width:700rpx;
-  left: 25rpx;
+  width:730rpx;
+  left: 10rpx;
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #dbdbdb;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
 }
 .col1{
   position: absolute;
   width:230rpx;
-  /* left: 30rpx; */
-  height: 180rpx;
+  margin-left: 20rpx;
+  height: 200rpx;
   border-radius: 20rpx;
   overflow: hidden;
 }
@@ -94,13 +81,12 @@ body{
 }
 .col2{
   position: absolute;
-  width:450rpx;
-  left: 260rpx;
+  width:440rpx;
+  left: 280rpx;
   height: 180rpx;
 }
 .col2 .row1{
   position: relative;
-  /* margin-top: 40rpx; */
   font-size: 0.9rem;
   color:#333333;
 }
@@ -115,26 +101,22 @@ body{
   margin-top: 20rpx;
 }
 .row3 view{
-  color:	#808080;
+  position: relative;
+  width:180rpx;
+  height: 62rpx;
+}
+.row3 image{
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+.row3 text{
+  position: absolute;
+  text-align: center;
+  width: 180rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  color:#ffffff;
   font-size: 0.9rem;
   letter-spacing: 2rpx;
 }
-.row3 button{
-  width:150rpx;
-}
-/* 
-.col3{
-  position: absolute;
-  width: 100rpx;
-  height: 100%;
-  left: 600rpx;
-  border:1px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.col3 image{
-  position: relative;
-  width: 60%;
-  height: 100%;
-} */

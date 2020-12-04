@@ -4,60 +4,113 @@
   height: 100%;
   left:0;
   top:0;
+  background: #F8F4F4;
 }
-
-.info_area{
-  position:absolute;
-  left:0;
-  top:30%;
-  /* background: rgba(255,255,255,.5); */
-  /* background: #ffffff; */
-  width:100%;
-  height: 400rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10rpx;
-}
-.info_area cover-image{
+.up_area{
   position:relative;
-  width:400rpx;
-  height:400rpx;
+  width:100%;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
 }
-
-.placearea{
-  position:absolute;
-  top:0;
-  left:0;
-  color: #ffffff;
-  background: rgba(0,0,0,.5);
+.myposition{
+  position: relative;
+  top: 0;
+  width: 90%;
   height: 80rpx;
   line-height: 80rpx;
-  width: 100%;
-  text-align: center;
+  left: 5%;
 }
-
-
-
-
-
-.btn_area{
-  position:absolute;
-  bottom: 50rpx;
-  width:100%;
-  height: 100rpx;
+.icon{
+  position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  height: 100%;
+}
+.icon image{
+  width: 38rpx;
+  height: 37rpx;
+}
+.text{
+  height: 100%;
+  margin-left: 20rpx;
+  font-size: 0.9rem;
+  color: #333333;
+  letter-spacing:2rpx;
+}
+.video_area{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  margin-top: 10rpx;
+  height: 380rpx;
+}
+.title{
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 80rpx;
+  display: flex;
   align-items: center;
 }
-.btn_area cover-image{
-  position:relative;
-  width: 400rpx;
-  height: 80rpx;
+.title image{
+  position: relative;
+  height: 32rpx;
+  width: 40rpx;
+  margin-left: 5rpx;
 }
-.btn_area cover-view{
-  position:absolute;
-  letter-spacing: 2rpx;
+.title .text{
+  position: relative;
+  line-height: 80rpx;
   font-size: 0.9rem;
-  color: #ffffff;
+}
+.state_area{
+  position: relative;
+  left: 125rpx;
+  width: 500rpx;
+  height: 178rpx;
+  margin-top: 60rpx;
+}
+.state_area image{
+  position:relative;
+  width: 100%;
+  height:100%;
+}
+.btn_area{
+  position: relative;
+  width: 500rpx;
+  height: 80rpx;
+  left: 125rpx;
+  margin-top: 60rpx;
+}
+.btn_area1:active{
+  transform: scale(0.9);
+  transition-duration: 0.5s;
+}
+.btn_area1{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.btn_area2{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.btn_area image{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.btn_area view{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  color:#FFFFFF;
+  font-size: 1.1rem;
+  letter-spacing: 2rpx;
 }

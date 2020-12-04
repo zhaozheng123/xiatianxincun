@@ -3,7 +3,7 @@
   <video src='{{videoSrc}}' poster="{{posterSrc}}" controls="{{false}}" custom-cache="{{false}}" style="width:{{windowWidth}}rpx;height:{{windowHeight-120}}rpx" autoplay object-fit='contain' loop></video>
   <cover-view class='btn_area'>
     <cover-view class='mark' bindtap='bindMyVideo'>
-      <cover-image src="../../images/btn_bg.png" mode='aspectFit'></cover-image>
+      <cover-image src="../../images/btn1.png" mode='aspectFit'></cover-image>
       <cover-view>添加到我的</cover-view>
     </cover-view>
   </cover-view>

@@ -11,7 +11,7 @@ App({
   },
 
   globalData: {
-    appid: "wxd2eea8ece9bf11df",   //下田心村小程序appid
+    appid: "wx861ec57f3445da15",   //暂时借用精彩点滴小程序appid测试
     openId: '',
     scopeType: ["scope.userLocation", "scope.writePhotosAlbum","scope.camera"],
     is_pay:0,

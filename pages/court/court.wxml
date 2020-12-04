@@ -1,30 +1,35 @@
 <wxs module="filter" src="../../utils/court.wxs"></wxs>
 <view class='page' >
-  <view class="title">
-    <view class="title_name">{{activity_name}}</view>
+  <view class="top_area">
+  <image src="../../images/top_area.jpg" mode="aspectFit"></image>
     <view class="btn_group" bindtap="click_reserve">
-        <image src="../../images/btn_bg1.png" mode="aspectFit"></image>
-        <view class="txt">点我预约</view>
+        <image src="../../images/reverse.png" mode="aspectFit"></image>
     </view>
   </view>
   <view class="reserveList">
       <block wx:if="{{reserveList}}"  wx:for="{{reserveList}}" wx:key="index"> 
           <view class="reservelist_item">
             <view class="col1">
-                <image src="../../images/item_bg.jpg" mode='aspectFill'></image>
+                <image src="../../images/item_bg.png" mode='aspectFill'></image>
             </view>
             <view class="col2">
-              <view class="row1">{{item.activity_name}}--{{filter.getlivetype(item.task.live_type)}}</view>
+              <view class="row1">{{item.task.title}}--{{filter.getlivetype(item.task.live_type)}}</view>
               <view class="row2">{{item.task.live_start}}</view>
               <view class="row3">
-                <view wx:if="{{item.task.nobegin}}">球赛未开始，请耐心等待...</view>
-                <button wx:if="{{!item.task.nobegin && item.task.isbroadcast}}" type="warn" size="mini" data-item="{{item}}" bindtap="goShowBroadCast">直播中</button>
-                <button wx:if="{{!item.task.nobegin && !item.task.isbroadcast}}" type="primary" size="mini"  data-item="{{item}}" bindtap="goSeeVideo">回放</button>
+                <view wx:if="{{item.task.nobegin}}" data-item="{{item}}" bindtap="goSeeReserve">
+                  <image src="../../images/btn_reserve.png" mode="aspectFit"></image>
+                  <text>已预约</text>
+                </view>
+                <view wx:if="{{!item.task.nobegin && item.task.isbroadcast}}" bindtap="goShowBroadCast" data-item="{{item}}">
+                  <image src="../../images/btn_live.png" mode="aspectFit"></image>
+                  <text>直播中</text>
+                </view>
+                <view wx:if="{{!item.task.nobegin && !item.task.isbroadcast}}" bindtap="goSeePlayback" data-item="{{item}}">
+                  <image src="../../images/btn_playback.png" mode="aspectFit"></image>
+                  <text>回放</text>
+                </view>
               </view>
             </view>
-             <!-- <view class="col3">
-              <image src="../../images/guide.png" mode="aspectFit"></image>
-            </view> -->
           </view>
       </block>
   </view>

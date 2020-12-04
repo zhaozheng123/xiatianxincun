@@ -17,7 +17,7 @@ Page({
         success(res) {
           if (res.code) {
             wx.request({
-              url: "https://iva.siiva.com/me_photo/user/openid?code=" + res.code + "&appid=" + app.globalData.appid,
+              url: "https://ft.wisewing.cn/me_photo/user/openid?code=" + res.code + "&appid=" + app.globalData.appid,
               data: {
                 code: res.code,
               },

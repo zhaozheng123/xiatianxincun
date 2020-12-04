@@ -9,7 +9,7 @@ Page({
     //显示未购买（0）或者已购买（1）
     is_pay:0,
     limit: 50,
-    Tid_list: "https://iva.siiva.com/me_photo/task/bind_openid_list",
+    Tid_list: "https://ft.wisewing.cn/me_photo/task/bind_openid_list",
     //显示当前选择类别的图片(已购买和原图)
     show_img_arr: [],
     nopaycum:0,   //未购买数量
@@ -81,7 +81,7 @@ Page({
 
   getTidList: function (res) {
     // console.log('===========进来获取task列表===========')
-    // console.log("getTidList", res);
+    console.log("getTidList", res);
     this.setData({
       nopaycum: res.data.no_pay_count,
       paycum: res.data.pay_count,

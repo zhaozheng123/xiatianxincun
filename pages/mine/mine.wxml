@@ -17,7 +17,13 @@
                   <view class="box">
                       <view data-activity_id="{{item.activity_id}}" class='img_background'  wx:for="{{item.tasks}}" wx:key="unique">
                        
-                      <image class='img_area' mode="aspectFill" src="https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/{{item.activity_id}}/{{item.taskId}}_min.jpg" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}"></image>
+                      <!-- <image class='img_area' mode="aspectFill" src="https://ft.wisewing.cn/file_server?file_name={{item.taskId}}_min.jpg" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}"></image> -->
+                       <block wx:if="{{item.activity_id=='1643736397xz'|| item.activity_id=='1643736397xy'}}">
+                        <image mode="aspectFill"  src="{{item.state == 'complete'?'https://ft.wisewing.cn/file_server?file_name=/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
+                    </block>
+                    <block wx:else>
+                     <image mode="aspectFill"  src="{{item.state == 'complete'?'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+item.activity_id+'/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
+                    </block>
 
                       <image style="position:absolute;left:0;top:0;width:100%;height:100%" wx:if="{{item.state!=='complete'}}" mode="aspectFit" src="../../images/onDo.png"></image>
 
@@ -29,8 +35,14 @@
                 <block wx:else >
                   <view class="box">
                     <view class='img_background' wx:for="{{item.tasks}}" wx:key="unique">
-                          <image mode="aspectFill"  src="{{item.state == 'complete'?'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+item.activity_id+'/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
-                          <image wx:if="{{item.mode == 'video'}}" class="img_video" src="../../images/video.png"></image>
+                    <block wx:if="{{item.activity_id=='1643736397xz'|| item.activity_id=='1643736397xy'}}">
+                        <image mode="aspectFill"  src="{{item.state == 'complete'?'https://ft.wisewing.cn/file_server?file_name=/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
+                    </block>
+                    <block wx:else>
+                     <image mode="aspectFill"  src="{{item.state == 'complete'?'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+item.activity_id+'/'+item.taskId+'_min.jpg':'../../images/mine.png'}}" class="img_area" bindtap='show_img_choose_type' data-index='{{index}}' data-item="{{item}}" lazy-load='true' ></image>
+                    </block>
+                    <image wx:if="{{item.mode == 'video'}}" class="img_video" src="../../images/video.png"></image>
+                        
                           <image wx:if="{{item.state !== 'complete' && item.state!=='abort'}}" style="position:absolute;width:100%;height:100%" src="../../images/onDo.png" mode="aspectFill"></image>
                           <view class="abort" wx:if="{{item.state=='abort'}}" >
                               <icon style="position:absolute;left:75%;" data-taskid="{{item.taskId}}" type="cancel" size="30" color="red" bindtap='delete_click'></icon>

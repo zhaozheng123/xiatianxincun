@@ -27,8 +27,10 @@ Page({
       activity_id:options.activity_id,
       windowHeight: windowHeight,
       windowWidth: windowWidth,
-      videoSrc:'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+options.activity_id+'/'+options.taskId+'.mp4',
-      poster:'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+options.activity_id+'/'+options.taskId+'_min.jpg',
+      // poster: 'https://ft.wisewing.cn/file_server?file_name='+ taskId + '_min.jpg',
+      // videoSrc: 'https://ft.wisewing.cn/file_server?file_name='+taskId+'.mp4',
+      poster: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+options.activity_id+'/'+options.taskId+'_min.jpg',
+      videoSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+options.activity_id+'/'+options.taskId+'.mp4',
     })
 
     //动态获取当前活动视频的定价
@@ -42,7 +44,7 @@ Page({
 
   /* 目前免费支付调用该方法*/
   free:function(){
-    var Bind_Url = "https://iva.siiva.com/me_photo/task/bind_openid";
+    var Bind_Url = "https://ft.wisewing.cn/me_photo/task/bind_openid";
     var data = {
       openid: app.globalData.openId,
       taskId: this.data.taskId,
@@ -73,7 +75,7 @@ Page({
   //       isbuying:true
   //     })
   //       wx.request({
-  //         url: 'https://iva.siiva.com/me_photo/pay',
+  //         url: 'https://ft.wisewing.cn/me_photo/pay',
   //         data: {
   //           openid: app.globalData.openId,
   //           activity_id: that.data.activity_id,
@@ -117,7 +119,7 @@ Page({
       template_type:"02"
     }
     console.log(data)
-    util.request_get('https://iva.siiva.com/me_photo/activity/templates', data, this.getTemplatesBack)
+    util.request_get('https://ft.wisewing.cn/me_photo/activity/templates', data, this.getTemplatesBack)
   },
   getTemplatesBack: function (res) {
     // 获得模板列表

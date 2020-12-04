@@ -1,14 +1,14 @@
 <view class='page' >
-  <image class="mainBg" src="../../images/bg_ball.jpg" mode="scaleToFill"></image>
+  <image class="mainBg" src="../../images/bg_ball.png" mode="scaleToFill"></image>
   <view class="lookExemple" bindtap="touav">
     <view class="ExempleImg">
-      <image class="item_img" src="../../images/mine.png" mode="aspectFit"></image>
+      <image class="item_img" src="../../images/uav_my.png" mode="aspectFit"></image>
     </view>
     <text>航拍类</text>
   </view> 
    <view class="lookExemple1" bindtap="toball">
     <view class="ExempleImg">
-      <image class="item_img" src="../../images/mine.png" mode="aspectFit"></image>
+      <image class="item_img" src="../../images/uav_my.png" mode="aspectFit"></image>
     </view>
     <text>篮球类</text>
   </view> 

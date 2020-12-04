@@ -7,9 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    getTaskListAPI:'https://iva.siiva.com/me_photo/task/list',
+    getTaskListAPI:'https://ft.wisewing.cn/me_photo/task/list',
     reserveList:[],
-    activity_name:'下田心村篮球场',
     isbroadcast:false,  //是否正在直播
     nobegin:true,//球赛还未开始标记
     activity_id:'1615736797xt',//下田心村预约直播的活动ID
@@ -34,6 +33,8 @@ Page({
       for(let i=0;i<=res.data.list.length-1;i++){
         if(CurrentDate<res.data.list[i].task.live_start){
           // console.log('当前时间小于live_start')
+          // console.log(CurrentDate)
+        // console.log(res.data.list[i].task.live_start)
           res.data.list[i].task.nobegin=true;
           res.data.list[i].task.isbroadcast=false;
           tempreservelist.push(res.data.list[i]);
@@ -54,16 +55,16 @@ Page({
       this.setData({
         reserveList:tempreservelist
       })
-      console.log(this.data.reserveList)
+      // console.log(this.data.reserveList)
   },
   getCurrentDate:function(){
     //获取当前时间戳  
    var timestamp = Date.parse(new Date());  
-   console.log("当前时间戳为：" + timestamp);  
+  //  console.log("当前时间戳为：" + timestamp);  
     var date = new Date(parseInt(timestamp));
     var y = date.getFullYear();
     var m = date.getMonth() + 1;
-    console.log(date.getMonth()+"============================")
+    // console.log(date.getMonth()+"============================")
     m = m < 10 ? ('0' + m) : m;
     var d = date.getDate();
     d = d < 10 ? ('0' + d) : d;
@@ -85,24 +86,37 @@ Page({
     })
   },
 
-  goSeeVideo:function(res){
+  goSeeReserve:function(res){
     var temp_cur_item = res.currentTarget.dataset.item;
-    console.log("列表点击事件", temp_cur_item);
+    // console.log("列表点击事件", temp_cur_item);
+    var title=temp_cur_item.task.title;
+    var date=temp_cur_item.task.live_start.split(" ")[0];
+    var time=temp_cur_item.task.live_start.split(" ")[1]+"--"+temp_cur_item.task.live_end.split(" ")[1];
       wx.navigateTo({
-        url: '../live/live?taskId=' + temp_cur_item.task.taskId+'&mode=playback'
+        url: '../live/live?taskId=' + temp_cur_item.task.taskId+'&mode=reserve&time='+time+'&date='+date+'&title='+title
+      })
+  },
+  goSeePlayback:function(res){
+    var temp_cur_item = res.currentTarget.dataset.item;
+    // console.log("列表点击事件", temp_cur_item);
+    var title=temp_cur_item.task.title;
+    var date=temp_cur_item.task.live_start.split(" ")[0];
+    var time=temp_cur_item.task.live_start.split(" ")[1]+"--"+temp_cur_item.task.live_end.split(" ")[1];
+      wx.navigateTo({
+        url: '../live/live?taskId=' + temp_cur_item.task.taskId+'&mode=playback&time='+time+'&date='+date+'&title='+title
       })
   },
   goShowBroadCast:function(res){
     var temp_cur_item = res.currentTarget.dataset.item;
-    // console.log("列表点击事件", temp_cur_item);
-    wx.navigateTo({
-      url: '../live/live?taskId='+temp_cur_item.task.taskId+'&mode=broadcast'
-    })
-
-    //测试直接播放
+    console.log("列表点击事件", temp_cur_item);
     // wx.navigateTo({
-    //   url: '../out/out?taskId='+temp_cur_item.task.taskId
+    //   url: '../live/live?taskId='+temp_cur_item.task.taskId+'&mode=broadcast'
     // })
+
+    // 测试直接播放
+    wx.navigateTo({
+      url: '../out/out?taskId='+temp_cur_item.task.taskId+'&title='+temp_cur_item.task.title
+    })
   }
 
 

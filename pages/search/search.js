@@ -17,7 +17,7 @@ Page({
     curChooseTime: '',
     showChooseTime: '',
     tasklist:[],
-    get_tasklist_url: "https://iva.siiva.com/me_photo/task/list",
+    get_tasklist_url: "https://ft.wisewing.cn/me_photo/task/list",
     begin:'',
     end:'',
     findvideofail:false,  //搜索不到task显示
@@ -50,8 +50,8 @@ Page({
       project_id: this.data.project_id,
       begin: date+" "+this.data.showChooseTime.split("~")[0],
       end:  date+" "+this.data.showChooseTime.split("~")[1],
-      has_preview_img: 1,
-      has_preview_video: 1,
+      // has_preview_img: 1,
+      // has_preview_video: 1,
     }
     console.log(data)
     util.request_get_over_time(this.data.get_tasklist_url, data, this.getTaskList);

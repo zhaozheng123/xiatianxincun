@@ -36,14 +36,25 @@ Page({
       //非分享页面进来
       var taskId=options.taskId;
       var activity_id=options.activity_id;
+      if(activity_id=='1643736397xz'|| activity_id=='1643736397xy'){
         this.setData({
           windowHeight: windowHeight,
           windowWidth: windowWidth,
           taskId:taskId,
           activity_id:activity_id,
-          posterSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/' + activity_id + '/' + taskId + '_min.jpg',
-          videoSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+activity_id+'/'+taskId+'.mp4'
+          posterSrc: 'https://ft.wisewing.cn/file_server?file_name='+ taskId + '_min.jpg',
+          videoSrc: 'https://ft.wisewing.cn/file_server?file_name='+taskId+'.mp4',
         });  
+      }else{
+        this.setData({
+          windowHeight: windowHeight,
+          windowWidth: windowWidth,
+          taskId:taskId,
+          activity_id:activity_id,
+          posterSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+activity_id+'/'+taskId+'_min.jpg',
+          videoSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+activity_id+'/'+taskId+'.mp4',
+        });  
+      }
     }
   },
 

@@ -1,22 +1,22 @@
 <view class='page' >
-  <image class="mainBg" src="../../images/bg_ball.jpg" mode="scaleToFill"></image>
-  <view class="toseemoment" bindtap="Toseemoment">
+  <image class="mainBg" src="../../images/bg_ball.png" mode="scaleToFill"></image>
+  <view class="toseemoment c2" bindtap="Toseemoment">
     <view class="ExempleImg">
-      <image class="item_img" src="../../images/moment.png" mode="aspectFit"></image>
+      <image class="item_img" src="../../images/ball_replay.png" mode="aspectFit"></image>
     </view>
     <text>精彩回顾</text>
   </view> 
 
-  <view class="toseemine" bindtap="Toseelive">
+  <view class="toseemoment c1" bindtap="Toseelive">
     <view class="ExempleImg">
-      <image class="item_img" src="../../images/live.png" mode="aspectFit"></image>
+      <image class="item_img" src="../../images/ball_live.png" mode="aspectFit"></image>
     </view>
     <text>直播观看</text>
   </view> 
 
-   <view class="toseemine" bindtap="Toseemine">
+   <view class="toseemoment c1" bindtap="Toseemine">
     <view class="ExempleImg">
-      <image class="item_img" src="../../images/mine.png" mode="aspectFit"></image>
+      <image class="item_img" src="../../images/ball_my.png" mode="aspectFit"></image>
     </view>
     <text>查看我的</text>
   </view> 

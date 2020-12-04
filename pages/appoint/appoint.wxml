@@ -1,15 +1,16 @@
-
-<!--pages/main_page/main_page.wxml-->
 <view class='page' >
-  <image class="mainBg" src="../../images/bg_ball.jpg" mode="scaleToFill"></image>
   <view class="row_item">
     <view class="row_item_title">球场</view>
     <view class="row_item_detail" style="color: #30beff;">{{showChoosePlace}}</view>
   </view>
+  <view class="row_item">
+    <view class="row_item_title">直播名称</view>
+    <view class="row_item_detail" style="color: #30beff;"><input class="weui-input" auto-focus placeholder="请输入名称" placeholder-class="phClass" bindinput="bindKeyInput"/></view>
+  </view>
   <view class="location_area">
-    <view class="row_item_title1">选择位置</view>
+    <view class="row_item_title1">选择场景</view>
     <view class="location_choose_area">
-      <view class="location_choose_item" wx:for="{{LocationList}}" wx:key="unique" bindtap='choose_location' data-item="{{item}}" style="border:{{item.location_name==choose_location_name?'2px solid #30beff':''}}">{{item.location_name}}</view>
+      <view class="location_choose_item" wx:for="{{LocationList}}" wx:key="unique" bindtap='choose_location' data-item="{{item}}" style="background:{{item.location_name==choose_location_name?'#30beff':'#bdbdbd'}}">{{item.location_name}}</view>
     </view>
   </view> 
     <view class="row_item"  data-gid='0' bindtap="open_choose_time">
@@ -21,9 +22,9 @@
     <view class="row_item_detail" style="color: #30beff;">{{showChooseEndTime}}</view>
   </view>
 
- <view class="btn_group" bindtap="reserve">
-    <image src="../../images/btn_bg.png" mode="aspectFit"></image>
-    <view class="txt">预约</view>
+ <view class="btn_group">
+  <view class="btn btn_gray" wx:if="{{title=='' || showChooseStartTime=='' || showChooseEndTime==''}}">预约</view>
+  <view class="btn btn_blue" wx:else bindtap="reserve">预约</view>
   </view>
 
 

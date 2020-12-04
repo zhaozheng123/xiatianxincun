@@ -9,7 +9,7 @@
  <view class="tasklist" style="height:{{tasklistHeight}}rpx">
     <block wx:if="{{tasklist.length!=0}}"  wx:key="index" wx:for="{{tasklist}}">  
       <view class="img">      
-          <image class="ditu" src="https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/{{item.task.taskId}}_min.jpg" data-current="{{index}}" data-item="{{item}}" mode='aspectFill' bindtap='gomyVideo' ></image>           
+          <image class="ditu" src="https://ft.wisewing.cn/file_server?file_name={{item.task.taskId}}_min.jpg" data-current="{{index}}" data-item="{{item}}" mode='aspectFill' bindtap='gomyVideo' ></image>           
       </view> 
     </block> 
   </view>

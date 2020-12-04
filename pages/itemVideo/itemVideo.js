@@ -33,8 +33,8 @@ Page({
         windowWidth: windowWidth,
         taskId:taskId,
         activity_id:activity_id,
-        posterSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+ taskId + '_min.jpg',
-        videoSrc: 'https://siiva-video-public.oss-cn-hangzhou.aliyuncs.com/'+activity_id+'/'+taskId+'_min.mp4',
+        posterSrc: 'https://ft.wisewing.cn/file_server?file_name='+ taskId + '_min.jpg',
+        videoSrc: 'https://ft.wisewing.cn/file_server?file_name='+taskId+'_min.mp4',
       });
   },
 
@@ -70,7 +70,7 @@ Page({
   bindMyVideo:function(){
       // console.log('绑定该taskId与openid')
       // 访问后台绑定openid和taskid
-      var Bind_Url = "https://iva.siiva.com/me_photo/task/bind_openid";
+      var Bind_Url = "https://ft.wisewing.cn/me_photo/task/bind_openid";
       var data = {
         openid: app.globalData.openId,
         taskId: this.data.taskId,
@@ -80,9 +80,9 @@ Page({
       util.request_get(Bind_Url, data, this.getBindBack);
   },
   getBindBack:function(res){
-    // console.log(res)
+    console.log(res)
     if(res.data && res.data.code == 0){
-      // console.log('绑定成功')
+      console.log('绑定成功')
       app.globalData.is_pay=1
       wx.navigateTo({
         url: '../mine/mine',
