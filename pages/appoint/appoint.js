@@ -132,8 +132,12 @@ Page({
       }else{
         if(this.data.showChooseEndTime!=""){
           // console.log(showChooseStartTime1 +"======="+this.data.showChooseEndTime)
-          var timestamp_start=new Date(showChooseStartTime1)
-          var timestamp_end=new Date(this.data.showChooseEndTime)
+          // var timestamp_start=new Date(showChooseStartTime1)
+          // var timestamp_end=new Date(this.data.showChooseEndTime)
+          var format1 = showChooseStartTime1.replace(/-/g, '/')
+          var timestamp_start = Date.parse(new Date(format1))
+          var format2 = this.data.showChooseEndTime.replace(/-/g, '/')
+          var timestamp_end = Date.parse(new Date(format2))
           if(timestamp_end-timestamp_start<=0){
             wx.showToast({
               icon:'none',
@@ -164,7 +168,8 @@ Page({
     }else{
       //准备设置结束时间
       var showChooseEndTime1=this.data.years[val[0]]+"-"+month+"-"+day+" "+hour+":"+minute+":00"
-      var timestamp_end=new Date(showChooseEndTime1)
+      var format1 = showChooseEndTime1.replace(/-/g, '/')
+      var timestamp_end = Date.parse(new Date(format1))
       if(showChooseEndTime1<CurrentDate){
         wx.showToast({
           icon:'none',
@@ -173,7 +178,11 @@ Page({
         })
       }else{
         if(this.data.showChooseStartTime!=""){
-          var timestamp_start=new Date(this.data.showChooseStartTime)
+          // console.log(showChooseEndTime1 +"======="+this.data.showChooseStartTime)
+          // var timestamp_start=new Date(this.data.showChooseStartTime)
+          var format = this.data.showChooseStartTime.replace(/-/g, '/')
+          var timestamp_start = Date.parse(new Date(format))
+          console.log(timestamp_end+'==============='+timestamp_start)
           if(timestamp_end-timestamp_start<=0){
             wx.showToast({
               icon:'none',
@@ -182,6 +191,7 @@ Page({
             })
           }else{
             var h=(timestamp_end-timestamp_start)/(1000*60*60)
+            console.log('hhhhhhhhhhhhhhhh:'+h)
             if(h<=2){
               this.setData({
                 showChooseEndTime:showChooseEndTime1

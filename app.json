@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/homepage/homepage",
+    "pages/uav/uav",
+    "pages/sport/sport",
+    "pages/court/court",
+    "pages/appoint/appoint",
     "pages/qr/qr"
   ],
   "permission": {
