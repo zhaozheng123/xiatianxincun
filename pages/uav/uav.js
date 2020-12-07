@@ -35,9 +35,19 @@ Page({
   },
 
 
-
   Toshoot: function(){
-    this.position()
+    var that=this;
+    var res=wx.getSystemInfoSync()
+    console.log(res)
+    if(!res.locationEnabled){
+      wx.showToast({
+        icon:'none',
+        title: '请打开GPS服务',
+        duration:4000
+      })
+    }else{
+      that.position()
+    }
   },
   Toseemine:function(){
     wx.navigateTo({
@@ -84,7 +94,7 @@ Page({
                           wx.showToast({
                             title: '手机定位未打开',
                             icon: 'none',
-                            duration: 2000 
+                            duration: 4000 
                           })
                         },
                       })
@@ -115,7 +125,7 @@ Page({
               wx.showToast({
                 title: '手机定位未打开',
                 icon: 'none',
-                duration: 2000 
+                duration: 4000 
               })
             },
           })
@@ -136,7 +146,7 @@ Page({
               wx.showToast({
                 title: '手机定位未打开',
                 icon: 'none',
-                duration: 2000 
+                duration: 4000 
               })
             },
           })
