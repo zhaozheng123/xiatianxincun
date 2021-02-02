@@ -164,7 +164,7 @@ Page({
    */
   onShareAppMessage: function (options) {
     var that = this;
-    var title = "下田心村智能航拍"
+    var title = "上田村智能航拍"
 　　// 设置菜单中的转发按钮触发转发事件时的转发内容
 　　var shareObj = {
       title: title,        

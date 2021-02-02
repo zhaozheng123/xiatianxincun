@@ -39,7 +39,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showChoosePlace:'下田心村篮球场',
+    showChoosePlace:'上田村篮球场',
     activity_id:'1615736797xt',
     LocationList:[
       {"location_name":"左半场","location_id":"left"},
